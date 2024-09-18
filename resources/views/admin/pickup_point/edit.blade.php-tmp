@@ -1,0 +1,59 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\Md Mizanur Rahman\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+<form action="{{ route('pickuppoint.update') }}" method="post" id="edit_modal">
+	@csrf
+	<div class="modal-body">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <label for="ware" class="control-label">pickupPoint name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="ware" name="pickup_point_name" value="{{ $data->pickup_point_name }}">
+                      <input type="hidden" name="id" value="{{ $data->id }}">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="coupon" class="control-label">pickupPoint Address <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="coupon" name="pickup_point_address" value="{{ $data->pickup_point_address }}">
+                  </div>
+                  <div class="form-group">
+                      <label for="phone" class="control-label">PickupPoint Phone <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="phone" name="pickup_point_phone" value="{{ $data->pickup_point_phone }}">
+                  </div>
+                  <div class="form-group">
+                      <label for="phone2" class="control-label">Another Phone <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="phone2" name="pickup_point_phone_two" value="{{ $data->pickup_point_phone_two}}">
+                  </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light"><span class="d-none loader"><i class="fas fa-spinner"></i> loading..</span><span class="submit_btn">submit</span></button>
+    </div>
+</form>
+<script>
+	//update coupon----------
+      $('#edit_modal').submit(function(e){
+          e.preventDefault();
+           var url = $(this).attr('action');
+           var request = $(this).serialize();
+           $.ajax({
+              url:url,
+              type:'post',
+              async:false,
+              data:request,
+              success:function(data){
+                toastr.success(data);
+                $('#edit_modal')[0].reset();
+                $('#EditModal').modal('hide');
+                table.ajax.reload();
+              }
+
+           });
+        });
+</script>

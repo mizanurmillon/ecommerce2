@@ -1,0 +1,13 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\Md Mizanur Rahman\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Brand extends Model {
+	use HasFactory;
+	protected $fillable = ['brand_name', 'brand_slug', 'brand_logo', 'front_page', ];
+}

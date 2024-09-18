@@ -1,0 +1,14 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\Md Mizanur Rahman\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Invoice</title>
+</head>
+<body>
+	<h1>Your order are progress on recieved. </h1>
+
+</body>
+</html>
